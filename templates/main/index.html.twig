@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="header">
+            <div class="line-1">
+                <div>
+                    <h1>{{ name }}</h1>
+                    <div class="city-buttons">
+                        <a href="/">Сменить город</a>
+                        <a id="my-location" href="#">Мое местоположение</a>
+                    </div>
+                </div>
+                <div class="temp-buttons">
+                    &#176;
+                    <a class="active" href="?">C</a>
+                    <a href="#">F</a>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div style="flex: 1; text-align: center">
+                <img src="http://openweathermap.org/img/w/{{ icon }}.png" height="50" alt="">
+                <span class="temperature">{{ temp }} &#176;</span>
+                <br>
+                <span class="info-text">{{ description }}</span>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="info-column">
+                <span>Ветер</span>
+                <p><b>{{ wind }}</b> м/с </p>
+            </div>
+            <div class="info-column">
+                <span>Давление</span>
+                <p><b>{{ pressure }}</b> мм рт. ст.</p>
+            </div>
+            <div class="info-column">
+                <span>Влажность</span>
+                <p><b>{{ humidity }}</b> %</p>
+            </div>
+            <div class="info-column">
+                <span>Вероятность осадков</span>
+                <p><b>{{ clouds }}</b> %</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
