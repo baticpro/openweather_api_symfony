@@ -4,7 +4,7 @@
 namespace App\Service;
 
 
-class WeatherBuilder
+class WeatherRequestBuilder
 {
     public $lat;
     public $lng;
@@ -50,8 +50,8 @@ class WeatherBuilder
         return $this->city_id || $this->lat || $this->query;
     }
 
-    public function build(): Weather
+    public function build(): WeatherRequest
     {
-        return new Weather($this);
+        return new WeatherRequest($this);
     }
 }

@@ -4,7 +4,7 @@
 namespace App\Service;
 
 
-class Weather
+class WeatherRequest
 {
     const API_URL = 'https://api.openweathermap.org/data/2.5/weather';
     const API_TOKEN = 'da00138950fd4c9c1cc07891e3a45ec1';
@@ -16,7 +16,7 @@ class Weather
     private $lang;
     private $units;
 
-    public function __construct(WeatherBuilder $builder)
+    public function __construct(WeatherRequestBuilder $builder)
     {
         $this->lat = $builder->lat;
         $this->lng = $builder->lng;

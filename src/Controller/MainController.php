@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Service\WeatherBuilder;
+use App\Service\WeatherRequestBuilder;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -17,7 +17,7 @@ class MainController extends AbstractController
      */
     public function index(Request $request)
     {
-        $builder = new WeatherBuilder();
+        $builder = new WeatherRequestBuilder();
 
         if ($request->query->get('city_id'))
             $builder->addCity($request->query->get('city_id'));
